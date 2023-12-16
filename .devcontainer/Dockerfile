@@ -15,6 +15,7 @@ USER $USERNAME
 
 # make all python tools installed by pip accesible
 ENV PATH=$PATH:/home/$USERNAME/.local/bin
+ENV DEVCONTAINER=true
 RUN pip install pip --upgrade
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

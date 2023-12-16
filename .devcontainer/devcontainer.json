@@ -1,19 +1,77 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
+	"name": "data-analyst",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"build": { "dockerfile": "Dockerfile" },
+
+	"settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+        "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+        "python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+        "python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+        "python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+        "python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+        "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+        "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+    },
+
+	"extensions": [
+        "ms-python.python",
+        "teabyii.ayu",
+        "jeff-hykin.better-dockerfile-syntax",
+        "coenraads.bracket-pair-colorizer-2",
+        "file-icons.file-icons",
+        "emilast.logfilehighlighter",
+        "zhuangtongfa.material-theme",
+        "ibm.output-colorizer",
+        "wayou.vscode-todo-highlight",
+        "atishay-jain.all-autocomplete",
+        "amazonwebservices.aws-toolkit-vscode",
+        "hookyqr.beautify",
+        "phplasma.csv-to-table",
+        "alefragnani.bookmarks",
+        "mrmlnc.vscode-duplicate",
+        "tombonnike.vscode-status-bar-format-toggle",
+        "donjayamanne.githistory",
+        "codezombiech.gitignore",
+        "eamodio.gitlens",
+        "zainchen.json",
+        "ritwickdey.liveserver",
+        "yzhang.markdown-all-in-one",
+        "pkief.markdown-checkbox",
+        "shd101wyy.markdown-preview-enhanced",
+        "ionutvmi.path-autocomplete",
+        "esbenp.prettier-vscode",
+        "diogonolasco.pyinit",
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring",
+        "kevinrose.vsc-python-indent",
+        "mechatroner.rainbow-csv",
+        "msrvida.vscode-sanddance",
+        "rafamel.subtle-brackets",
+        "formulahendry.terminal",
+        "tyriar.terminal-tabs",
+        "redhat.vscode-yaml",
+		"ms-toolsai.jupyter",
+		"ms-toolsai.vscode-jupyter-powertoys"
+    ],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [9000],
+	"forwardPorts": [8888],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install -r requirements.txt"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	"shutdownAction": "none"
 }
